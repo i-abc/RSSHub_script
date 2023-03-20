@@ -29,8 +29,8 @@ while true; do
             sleep 10
             count=0
           else
-            echo "Website B-xidian/job/jobs is still down. Monitoring again in 2 minutes."
-            sleep 120
+            echo "Website B-xidian/job/jobs is still down. Monitoring again in 1 minute."
+            sleep 60
           fi
         fi
       done
@@ -53,8 +53,8 @@ while true; do
           sleep 10
           count=0
         else
-          echo "Website A-xidian/job/campus is still down. Monitoring again in 2 minutes."
-          sleep 120
+          echo "Website A-xidian/job/campus is still down. Monitoring again in 1 minute."
+          sleep 60
         fi
       fi
     done
