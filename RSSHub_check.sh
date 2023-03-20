@@ -20,8 +20,18 @@ while true; do
           echo "Website B-xidian/job/jobs is up. Resuming normal monitoring."
           break
         else
-          echo "Website B-xidian/job/jobs is still down. Monitoring again in 2 minutes."
-          sleep 120
+          ((count++))
+          if [ "$count" -eq 10 ]; then
+            echo "Website B-xidian/job/jobs has been down for 10 consecutive checks. Restarting RSSHub."
+            screen -r RSSHub -X stuff "^C"
+            sleep 1
+            screen -r RSSHub -X stuff "npm start$(printf \\r)"
+            sleep 10
+            count=0
+          else
+            echo "Website B-xidian/job/jobs is still down. Monitoring again in 2 minutes."
+            sleep 120
+          fi
         fi
       done
     fi
