@@ -14,6 +14,7 @@ while true; do
       sleep 60
     else
       echo "Website B-xidian/job/jobs is down. Monitoring..."
+      count=0
       while true; do
         response=$(curl -s -o /dev/null -w "%{http_code}" $url2)
         if [ "$response" -eq 200 ]; then
