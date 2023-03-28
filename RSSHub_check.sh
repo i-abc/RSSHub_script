@@ -24,9 +24,9 @@ while true; do
           ((count++))
           if [ "$count" -eq 10 ]; then
             echo "Website B-xidian/job/jobs has been down for 10 consecutive checks. Restarting RSSHub."
-            screen -r RSSHub -X stuff "^C"
+            tmux send-keys -t 0:0 C-c
             sleep 1
-            screen -r RSSHub -X stuff "npm start$(printf \\r)"
+            tmux send-keys -t 0:0 "npm start" C-m
             sleep 10
             count=0
           else
@@ -48,9 +48,9 @@ while true; do
         ((count++))
         if [ "$count" -eq 10 ]; then
           echo "Website A-xidian/job/campus has been down for 10 consecutive checks. Restarting RSSHub."
-          screen -r RSSHub -X stuff "^C"
+          tmux send-keys -t 0:0 C-c
           sleep 1
-          screen -r RSSHub -X stuff "npm start$(printf \\r)"
+          tmux send-keys -t 0:0 "npm start" C-m
           sleep 10
           count=0
         else
