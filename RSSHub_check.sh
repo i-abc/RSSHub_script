@@ -27,7 +27,7 @@ while true; do
             tmux send-keys -t 0:0 C-c
             sleep 1
             tmux send-keys -t 0:0 "npm start" C-m
-            sleep 60
+            sleep 20
             count=0
           else
             echo "Website B-xidian/job/jobs is still down. Monitoring again in 1 minute."
@@ -51,7 +51,7 @@ while true; do
           tmux send-keys -t 0:0 C-c
           sleep 1
           tmux send-keys -t 0:0 "npm start" C-m
-          sleep 60
+          sleep 20
           count=0
         else
           echo "Website A-xidian/job/campus is still down. Monitoring again in 1 minute."
