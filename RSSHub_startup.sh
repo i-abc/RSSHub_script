@@ -10,7 +10,7 @@ tmux send-keys -t RSSHub:0 "cd RSSHub && npm start" C-m
 tmux new-window -t RSSHub:1
 
 # 在新窗口中启动 RSSHub_check
-tmux send-keys -t RSSHub:1 "cd RSSHub_check && ./RSSHub_check.sh" C-m
+tmux send-keys -t RSSHub:1 "cd RSSHub_script && ./RSSHub_check.sh" C-m
 
 # 输出运行情况
 echo "RSSHub and RSSHub_check started."
